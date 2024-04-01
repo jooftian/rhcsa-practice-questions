@@ -1,6 +1,6 @@
 # Enable SELinux in enforcing mode
 
-### Question:
+## Question
 Enable SELinux in enforcing mode
 
 ***
@@ -9,10 +9,5 @@ Enable SELinux in enforcing mode
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-### Answer:
-
-* Make sure that **SELinux** is enabled. This setting can be changed only via reboot! Issue the command **getenforce** and
-check what is the status of **SELinux**. If You see **Disabled** then edit the file ***/etc/sysconfig/selinux*** and in a 
-proper line change **disabled** to **enforcing**.
-* Reboot the system
-* Again check **SELinux** status using command **getenforce**
+## Answer
+This procedure requires a reboot. Issue the command `getenforce` and check the status of SELinux, it should return `Enforcing`. If you see `Disabled` or `Permissive` then edit the file `/etc/selinux/config` and change SELINUX=disabled or SELINUX=permissive for SELINUX=enforcing. Save the file and reboot the system. Check again the status of SELinux.
